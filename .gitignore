@@ -1,8 +1,30 @@
 # Node
 node_modules/
 dist/
+build/
+*.tsbuildinfo
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment
 .env
+.env.local
+.env.*.local
 
 # IDEs
 .DS_Store
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.tgz
+.next/
+out/
+
+# OS
+Thumbs.db
+
