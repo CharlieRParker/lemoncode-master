@@ -1,0 +1,8 @@
+# Node
+node_modules/
+dist/
+package-lock.json
+.env
+
+# IDEs
+.DS_Store

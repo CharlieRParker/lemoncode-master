@@ -1,0 +1,77 @@
+// Variables de color
+$dark-turquoise: #267e82; // Turquesa oscuro de fondo
+$darker-turquoise: #03182066; // Turquesa más oscuro para active
+$white: #ffffff;
+
+// Breakpoint
+$mobile-breakpoint: 768px;
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navigation-wrapper {
+    padding: 20px;
+    min-height: 100vh;
+
+    .header {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .navbar {
+            display: flex;
+            text-align: center;
+            background-color: $dark-turquoise;
+            justify-content: space-between;
+
+            .nav-item {
+                color: $white;
+                text-decoration: none;
+                font-size: 1rem;
+                padding: 10px 15px;
+                position: relative;
+
+                &:nth-child(3) {
+                    color: $white;
+                    background-color: $darker-turquoise;
+                }
+            }
+        }
+    }
+}
+
+// Versión móvil
+@media (max-width: $mobile-breakpoint) {
+    .navigation-wrapper {
+        min-height: 50vh;
+        border: solid 8px black;
+        .header {
+            .navbar {
+                flex-direction: column;
+                .nav-item {
+                    padding: 15px 10px;
+                    &:first-child {
+                        color: $white;
+                        background-color: $darker-turquoise;
+                    }
+                    &:nth-child(3) {
+                        background-color: $dark-turquoise;
+                    }
+                }
+            }
+        }
+    }
+}

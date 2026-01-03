@@ -1,0 +1,212 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.box .text {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  padding: 5px;
+}
+
+.darken-4-1 {
+  background-color: #196090;
+}
+.darken-4-1 .text {
+  color: aqua;
+}
+
+.darken-3-1 {
+  background-color: #1d6fa5;
+}
+.darken-3-1 .text {
+  color: aqua;
+}
+
+.darken-2-1 {
+  background-color: #217dbb;
+}
+.darken-2-1 .text {
+  color: aqua;
+}
+
+.darken-1-1 {
+  background-color: #258cd1;
+}
+.darken-1-1 .text {
+  color: aqua;
+}
+
+.base-color-1 {
+  background-color: #3498db;
+}
+.base-color-1 .text {
+  color: #f0f0f0;
+}
+
+.lighten-1-1 {
+  background-color: #4aa3df;
+}
+.lighten-1-1 .text {
+  color: aqua;
+}
+
+.lighten-2-1 {
+  background-color: #5faee3;
+}
+.lighten-2-1 .text {
+  color: aqua;
+}
+
+.lighten-3-1 {
+  background-color: #75b9e7;
+}
+.lighten-3-1 .text {
+  color: aqua;
+}
+
+.lighten-4-1 {
+  background-color: #8bc4ea;
+}
+.lighten-4-1 .text {
+  color: aqua;
+}
+
+.darken-4-2 {
+  background-color: #a82315;
+}
+.darken-4-2 .text {
+  color: yellow;
+}
+
+.darken-3-2 {
+  background-color: #bf2718;
+}
+.darken-3-2 .text {
+  color: yellow;
+}
+
+.darken-2-2 {
+  background-color: #d62c1a;
+}
+.darken-2-2 .text {
+  color: yellow;
+}
+
+.darken-1-2 {
+  background-color: #e43725;
+}
+.darken-1-2 .text {
+  color: yellow;
+}
+
+.base-color-2 {
+  background-color: #e74c3c;
+}
+.base-color-2 .text {
+  color: #f0f0f0;
+}
+
+.lighten-1-2 {
+  background-color: #ea6153;
+}
+.lighten-1-2 .text {
+  color: yellow;
+}
+
+.lighten-2-2 {
+  background-color: #ed7669;
+}
+.lighten-2-2 .text {
+  color: yellow;
+}
+
+.lighten-3-2 {
+  background-color: #ef8b80;
+}
+.lighten-3-2 .text {
+  color: yellow;
+}
+
+.lighten-4-2 {
+  background-color: #f29f97;
+}
+.lighten-4-2 .text {
+  color: yellow;
+}
+
+.darken-4-3 {
+  background-color: #1b7943;
+}
+.darken-4-3 .text {
+  color: purple;
+}
+
+.darken-3-3 {
+  background-color: #208e4e;
+}
+.darken-3-3 .text {
+  color: purple;
+}
+
+.darken-2-3 {
+  background-color: #25a25a;
+}
+.darken-2-3 .text {
+  color: purple;
+}
+
+.darken-1-3 {
+  background-color: #29b765;
+}
+.darken-1-3 .text {
+  color: purple;
+}
+
+.base-color-3 {
+  background-color: #2ecc71;
+}
+.base-color-3 .text {
+  color: #f0f0f0;
+}
+
+.lighten-1-3 {
+  background-color: #40d47e;
+}
+.lighten-1-3 .text {
+  color: purple;
+}
+
+.lighten-2-3 {
+  background-color: #54d98c;
+}
+.lighten-2-3 .text {
+  color: purple;
+}
+
+.lighten-3-3 {
+  background-color: #69dd9a;
+}
+.lighten-3-3 .text {
+  color: purple;
+}
+
+.lighten-4-3 {
+  background-color: #7ee2a8;
+}
+.lighten-4-3 .text {
+  color: purple;
+}/*# sourceMappingURL=styles.css.map */

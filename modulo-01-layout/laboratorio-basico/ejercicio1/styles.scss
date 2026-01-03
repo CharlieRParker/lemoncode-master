@@ -1,0 +1,114 @@
+// Configuración de paletas
+$palettes: (
+    "1": (
+        base: #3498db,
+        text: aqua
+    ),
+    "2": (
+        base: #e74c3c,
+        text: yellow
+    ),
+    "3": (
+        base: #2ecc71,
+        text: purple
+    )
+);
+
+// Mixin para generar paletas
+@mixin generate-palettes() {
+    @each $suffix, $palette in $palettes {
+        $base: map-get($palette, base);
+        $text: map-get($palette, text);
+
+        // Colores oscuros
+        .darken-4-#{$suffix} {
+            background-color: darken($base, 20%);
+            .text {
+                color: $text;
+            }
+        }
+        .darken-3-#{$suffix} {
+            background-color: darken($base, 15%);
+            .text {
+                color: $text;
+            }
+        }
+        .darken-2-#{$suffix} {
+            background-color: darken($base, 10%);
+            .text {
+                color: $text;
+            }
+        }
+        .darken-1-#{$suffix} {
+            background-color: darken($base, 5%);
+            .text {
+                color: $text;
+            }
+        }
+
+        // Color base
+        .base-color-#{$suffix} {
+            background-color: $base;
+            .text {
+                color: #f0f0f0;
+            } // Blanco base consistente
+        }
+
+        // Colores claros
+        .lighten-1-#{$suffix} {
+            background-color: lighten($base, 5%);
+            .text {
+                color: $text;
+            }
+        }
+        .lighten-2-#{$suffix} {
+            background-color: lighten($base, 10%);
+            .text {
+                color: $text;
+            }
+        }
+        .lighten-3-#{$suffix} {
+            background-color: lighten($base, 15%);
+            .text {
+                color: $text;
+            }
+        }
+        .lighten-4-#{$suffix} {
+            background-color: lighten($base, 20%);
+            .text {
+                color: $text;
+            }
+        }
+    }
+}
+
+// Estilos generales (igual que antes)
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    margin: 20px;
+    // border: 1px solid #ccc;
+    // border-radius: 5px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .text {
+        font-weight: bold;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-align: center;
+        padding: 5px;
+    }
+}
+
+// Generamos todas las paletas
+@include generate-palettes();

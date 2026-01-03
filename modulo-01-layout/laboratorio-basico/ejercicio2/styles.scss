@@ -1,0 +1,73 @@
+.theme-a {
+    --base-color: red;
+    --important-color: darkred;
+    --warning-color: pink;
+    --primary-font: "Arial", sans-serif;
+    --secondary-font: "Courier New", Courier, monospace;
+    --border: 1px solid grey;
+    --border-radius: 3px;
+    --box-shadow: -10px 10px 15px black;
+}
+
+.theme-b {
+    --base-color: blue;
+    --important-color: darkblue;
+    --warning-color: cyan;
+    --primary-font: "Georgia", serif;
+    --secondary-font: "Verdana", sans-serif;
+    --border: 1px solid grey;
+    --border-radius: 10px;
+    --box-shadow: 10px 10px 15px black;
+}
+
+body {
+    font-family: var(--primary-font);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.box {
+    width: 80%;
+    height: 75px;
+    padding: 1rem;
+    border: var(--border);
+    background-color: var(--base-color);
+    border-radius: var(--border-radius);
+}
+
+.base-color {
+    background-color: var(--base-color);
+}
+
+.important-color {
+    background-color: var(--important-color);
+}
+
+.warning-color {
+    background-color: var(--warning-color);
+}
+
+.primary-font {
+    font-family: var(--primary-font);
+}
+
+.secondary-font {
+    font-family: var(--secondary-font);
+}
+
+.shadow-box {
+    width: 80%;
+    height: 75px;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
