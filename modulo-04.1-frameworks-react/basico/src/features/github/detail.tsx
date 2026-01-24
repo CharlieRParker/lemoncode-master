@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Box, Typography, Button } from '@mui/material'
-import { useOrganization } from './organization-context'
+import { useOrganization } from '../../shared/context/organization-context'
 
 export const DetailPage: React.FC = () => {
   const { id } = useParams()

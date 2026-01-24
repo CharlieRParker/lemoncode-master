@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,12 +6,12 @@ import {
 } from 'react-router-dom'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import { LoginPage } from './login'
-import { ListPage } from './list'
-import { DetailPage } from './detail'
-import { RickAndMortyPage } from './rickandmorty'
-import { RickAndMortyDetailPage } from './rickandmorty-detail'
-import { OrganizationProvider } from './organization-context'
+import { ListPage } from '../features/github/list'
+import { DetailPage } from '../features/github/detail'
+import { RickAndMortyPage } from '../features/rickAndMorty/rickandmorty'
+import { RickAndMortyDetailPage } from '../features/rickAndMorty/rickandmorty-detail'
+import { LoginPage } from '../auth/login'
+import { OrganizationProvider } from '../shared/context/organization-context'
 
 const theme = createTheme()
 
