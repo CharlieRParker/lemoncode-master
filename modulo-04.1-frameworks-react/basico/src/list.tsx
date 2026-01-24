@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {
   TextField,
   Button,
@@ -13,6 +13,7 @@ import {
   IconButton,
 } from '@mui/material'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
+import { useOrganization } from './organization-context'
 
 interface MemberEntity {
   id: string
@@ -21,26 +22,26 @@ interface MemberEntity {
 }
 
 export const ListPage: React.FC = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const { organization, setOrganization } = useOrganization()
   const [members, setMembers] = React.useState<MemberEntity[]>([])
   const [inputValue, setInputValue] = React.useState('')
   const [page, setPage] = React.useState(1)
 
-  const org = searchParams.get('org') || 'lemoncode'
-
   React.useEffect(() => {
-    setInputValue(org)
+    setInputValue(organization)
     setPage(1) // reset page when org changes
-  }, [org])
+  }, [organization])
 
   React.useEffect(() => {
-    fetch(`https://api.github.com/orgs/${org}/members?page=${page}&per_page=10`)
+    fetch(
+      `https://api.github.com/orgs/${organization}/members?page=${page}&per_page=10`
+    )
       .then((response) => response.json())
       .then((json) => setMembers(json))
-  }, [org, page])
+  }, [organization, page])
 
   const handleSearch = () => {
-    setSearchParams({ org: inputValue })
+    setOrganization(inputValue)
   }
 
   const handlePrev = () => {
@@ -89,7 +90,7 @@ export const ListPage: React.FC = () => {
             />
             <Button
               component={Link}
-              to={`/detail/${member.login}?org=${org}`}
+              to={`/detail/${member.login}`}
               variant="outlined"
             >
               View Details
