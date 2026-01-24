@@ -4,9 +4,9 @@
   "description": "Webpack bundling lab",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production --env production",
     "dev": "webpack --mode=development",
-    "analyze": "webpack --mode=production --analyze"
+    "analyze": "webpack --mode=production --env production --analyze"
   },
   "keywords": [],
   "author": "",
