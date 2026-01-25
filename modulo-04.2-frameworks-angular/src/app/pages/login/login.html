@@ -2,16 +2,20 @@
     <mat-form-field>
         <mat-label>Username</mat-label>
         <input matInput formControlName="username" type="email">
-        <mat-error *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+        @if (loginForm.get('username')?.invalid && loginForm.get('username')?.touched) {
+        <mat-error>
             Username is required and must be a valid email.
         </mat-error>
+        }
     </mat-form-field>
     <mat-form-field>
         <mat-label>Password</mat-label>
         <input matInput formControlName="password" type="password">
-        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+        <mat-error>
             Password is required and must be at least 8 characters.
         </mat-error>
+        }
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>
