@@ -1,7 +1,10 @@
 <header>
-    <div class="logo">My App</div>
+    <div class="logo">
+        <mat-icon>web</mat-icon>
+        <span>LemonCode App</span>
+    </div>
     <div class="user-info">
-        <span>{{ authService.getUsername() }}</span>
-        <button (click)="logout()">Logout</button>
+        <span>Bienvenido, {{ authService.getUsername() }}</span>
+        <button mat-raised-button color="warn" (click)="logout()">Cerrar Sesión</button>
     </div>
 </header>

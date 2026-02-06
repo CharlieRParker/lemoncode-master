@@ -1,1 +1,55 @@
-<p>profile works!</p>
+<div class="profile-container">
+    <h1>Mi Perfil</h1>
+
+    <mat-card class="profile-card">
+        <mat-card-content>
+            <div class="profile-header">
+                <mat-icon class="avatar">account_circle</mat-icon>
+                <div>
+                    <h2>{{ username }}</h2>
+                    <p>Usuario registrado</p>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="profile-info">
+                <div class="info-section">
+                    <h3>Información Personal</h3>
+                    <p><strong>Email:</strong> {{ username }}</p>
+                    <p><strong>Miembro desde:</strong> Enero 2026</p>
+                    <p><strong>Último acceso:</strong> Hoy</p>
+                </div>
+
+                <mat-divider></mat-divider>
+
+                <div class="info-section">
+                    <h3>Estadísticas</h3>
+                    <div class="stats">
+                        <div class="stat">
+                            <mat-icon>photo</mat-icon>
+                            <div>
+                                <span class="number">12</span>
+                                <span class="label">Fotos</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <mat-icon>edit</mat-icon>
+                            <div>
+                                <span class="number">5</span>
+                                <span class="label">Items</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <mat-icon>login</mat-icon>
+                            <div>
+                                <span class="number">24</span>
+                                <span class="label">Sesiones</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

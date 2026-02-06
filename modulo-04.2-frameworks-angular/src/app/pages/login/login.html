@@ -1,21 +1,99 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput formControlName="username" type="email">
-        @if (loginForm.get('username')?.invalid && loginForm.get('username')?.touched) {
-        <mat-error>
-            Username is required and must be a valid email.
-        </mat-error>
-        }
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput formControlName="password" type="password">
-        @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
-        <mat-error>
-            Password is required and must be at least 8 characters.
-        </mat-error>
-        }
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
-</form>
+<div class="login-container">
+    <mat-card class="login-card">
+        <mat-card-header class="login-header">
+            <div class="logo-section">
+                <mat-icon class="logo-icon">account_circle</mat-icon>
+                <h1>Welcome Back</h1>
+            </div>
+            <p class="login-subtitle">Sign in to your account</p>
+        </mat-card-header>
+
+        <mat-card-content class="login-content">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+                <!-- Email Field -->
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput formControlName="username" type="email" placeholder="Enter your email"
+                        autocomplete="email">
+                    <mat-icon matPrefix>email</mat-icon>
+                    @if (loginForm.get('username')?.invalid && loginForm.get('username')?.touched) {
+                    <mat-icon matSuffix class="success-icon">check_circle</mat-icon>
+                    }
+                </mat-form-field>
+
+                <!-- Password Field -->
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'"
+                        placeholder="Enter your password" autocomplete="current-password">
+                    <mat-icon matPrefix>lock</mat-icon>
+                    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" type="button">
+                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <!-- Remember Me & Forgot Password -->
+                <div class="form-options">
+                    <mat-checkbox formControlName="rememberMe" class="remember-checkbox">
+                        Remember me
+                    </mat-checkbox>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <!-- Error Messages -->
+                @if (loginForm.invalid && loginForm.touched) {
+                <div class="error-messages">
+                    @if (loginForm.get('username')?.invalid && loginForm.get('username')?.touched) {
+                    <mat-error>
+                        <mat-icon>error</mat-icon>
+                        Please enter a valid email address
+                    </mat-error>
+                    }
+                    @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                    <mat-error>
+                        <mat-icon>error</mat-icon>
+                        Password must be at least 8 characters long
+                    </mat-error>
+                    }
+                </div>
+                }
+
+                <!-- Login Button -->
+                <button mat-raised-button color="primary" type="submit" class="login-button"
+                    [disabled]="loginForm.invalid || isLoading">
+                    @if (isLoading) {
+                    <ng-container>
+                        <mat-icon class="loading-icon">refresh</mat-icon>
+                        <span>Signing In...</span>
+                    </ng-container>
+                    } @else {
+                    <span>Sign In</span>
+                    }
+                </button>
+            </form>
+
+            <!-- Social Login Options -->
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+
+            <div class="social-login">
+                <button mat-stroked-button class="social-button google">
+                    <mat-icon>account_circle</mat-icon>
+                    Google
+                </button>
+                <button mat-stroked-button class="social-button github">
+                    <mat-icon>code</mat-icon>
+                    GitHub
+                </button>
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions class="login-footer">
+            <p>Don't have an account?
+                <a href="#" class="signup-link">Sign up</a>
+            </p>
+        </mat-card-actions>
+    </mat-card>
+</div>

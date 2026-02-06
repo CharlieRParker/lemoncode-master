@@ -1,0 +1,402 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+header > * {
+    position: relative;
+    z-index: 2;
+}
+
+footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: auto;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Material overrides */
+.mat-mdc-card {
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mat-mdc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mat-mdc-button {
+    border-radius: 25px;
+    font-weight: 500;
+    text-transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mat-mdc-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mat-mdc-raised-button {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mat-mdc-raised-button:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Form styles */
+.mat-mdc-form-field {
+    margin-bottom: 16px;
+}
+
+.mat-mdc-text-field-wrapper {
+    border-radius: 8px;
+}
+
+.mat-mdc-input-element {
+    border-radius: 8px;
+}
+
+/* Error messages */
+.mat-mdc-form-field-error {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* Material List Styles */
+.mat-mdc-list-item {
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.mat-mdc-list-item:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+    transform: translateX(4px);
+}
+
+/* Material Icon Styles */
+.mat-icon {
+    transition: all 0.3s ease;
+}
+
+.mat-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Material Select Styles */
+.mat-mdc-select {
+    border-radius: 8px;
+}
+
+.mat-mdc-select-panel {
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Material Chip Styles */
+.mat-mdc-chip {
+    border-radius: 16px;
+    font-weight: 500;
+}
+
+/* Material Progress Bar Styles */
+.mat-mdc-progress-bar {
+    border-radius: 4px;
+    height: 6px;
+}
+
+/* Material Snackbar Styles */
+.mat-mdc-snackbar-surface {
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Material Dialog Styles */
+.mat-mdc-dialog-container {
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.mat-mdc-dialog-title {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.mat-mdc-dialog-content {
+    color: #5a6c7d;
+    line-height: 1.6;
+}
+
+/* Material Tab Styles */
+.mat-mdc-tab-group {
+    border-radius: 12px 12px 0 0;
+}
+
+.mat-mdc-tab-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+.mat-mdc-tab {
+    font-weight: 500;
+    text-transform: none;
+}
+
+.mat-mdc-tab.mdc-tab--active {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+/* Material Expansion Panel Styles */
+.mat-mdc-expansion-panel {
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.mat-mdc-expansion-panel:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-expansion-panel-header {
+    border-radius: 12px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.mat-mdc-expansion-panel-header:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* Material Menu Styles */
+.mat-mdc-menu-panel {
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mat-mdc-menu-item {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mat-mdc-menu-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+/* Material Tooltip Styles */
+.mat-mdc-tooltip {
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Material Badge Styles */
+.mat-mdc-badge-content {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    font-weight: 600;
+}
+
+/* Material Stepper Styles */
+.mat-mdc-stepper-horizontal {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+}
+
+.mat-mdc-step-header {
+    font-weight: 500;
+}
+
+.mat-mdc-step-header.mdc-step--completed {
+    background: #27ae60;
+}
+
+.mat-mdc-step-header.mdc-step--active {
+    background: #667eea;
+}
+
+/* Material Table Styles */
+.mat-mdc-table {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.mat-mdc-header-cell {
+    font-weight: 600;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.mat-mdc-row:hover {
+    background: rgba(102, 126, 234, 0.05);
+    cursor: pointer;
+}
+
+/* Material Paginator Styles */
+.mat-mdc-paginator {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: white;
+}
+
+.mat-mdc-paginator-container {
+    justify-content: center;
+}
+
+/* Material Slide Toggle Styles */
+.mat-mdc-slide-toggle {
+    margin-bottom: 16px;
+}
+
+.mat-mdc-slide-toggle.mdc-switch--selected .mdc-switch__track {
+    background: #667eea;
+}
+
+/* Material Radio Button Styles */
+.mat-mdc-radio-button {
+    margin-bottom: 12px;
+}
+
+.mat-mdc-radio-button.mdc-radio--selected .mdc-radio__native-control + .mdc-radio__background .mdc-radio__inner-circle {
+    background: #667eea;
+}
+
+.mat-mdc-radio-button.mdc-radio--selected .mdc-radio__native-control + .mdc-radio__background .mdc-radio__outer-circle {
+    border-color: #667eea;
+}
+
+/* Material Checkbox Styles */
+.mat-mdc-checkbox {
+    margin-bottom: 12px;
+}
+
+.mat-mdc-checkbox.mdc-checkbox--selected .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+/* Material Slider Styles */
+.mat-mdc-slider {
+    margin-bottom: 24px;
+}
+
+.mat-mdc-slider .mdc-slider__track {
+    background: #667eea;
+}
+
+.mat-mdc-slider .mdc-slider__thumb {
+    background: #667eea;
+}
+
+/* Custom Material Theme Colors */
+.mat-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+}
+
+.mat-accent {
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    color: white;
+}
+
+.mat-warn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+}
+
+/* Responsive Material Components */
+@media (max-width: 768px) {
+    .mat-mdc-card {
+        margin: 8px;
+        border-radius: 16px;
+    }
+
+    .mat-mdc-button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .mat-mdc-form-field {
+        width: 100%;
+    }
+
+    .mat-mdc-list-item {
+        margin-bottom: 8px;
+    }
+}

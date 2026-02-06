@@ -1,1 +1,77 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <h1>Dashboard</h1>
+    <p>Bienvenido, {{ username }}. Aquí tienes un resumen de tu actividad.</p>
+
+    <div class="metrics-grid">
+        <mat-card class="metric-card">
+            <mat-card-content>
+                <div class="metric">
+                    <mat-icon>people</mat-icon>
+                    <div>
+                        <h3>1,234</h3>
+                        <p>Usuarios Activos</p>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="metric-card">
+            <mat-card-content>
+                <div class="metric">
+                    <mat-icon>shopping_cart</mat-icon>
+                    <div>
+                        <h3>567</h3>
+                        <p>Pedidos Hoy</p>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="metric-card">
+            <mat-card-content>
+                <div class="metric">
+                    <mat-icon>attach_money</mat-icon>
+                    <div>
+                        <h3>$12,345</h3>
+                        <p>Ingresos Mensuales</p>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="metric-card">
+            <mat-card-content>
+                <div class="metric">
+                    <mat-icon>analytics</mat-icon>
+                    <div>
+                        <h3>89%</h3>
+                        <p>Satisfacción</p>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <mat-divider class="section-divider"></mat-divider>
+
+    <div class="recent-activity">
+        <h2>Actividad Reciente</h2>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon matListIcon>login</mat-icon>
+                <div matLine>Iniciaste sesión</div>
+                <div matLine>Hace 5 minutos</div>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>edit</mat-icon>
+                <div matLine>Actualizaste tu perfil</div>
+                <div matLine>Hace 1 hora</div>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>photo</mat-icon>
+                <div matLine>Subiste una nueva foto</div>
+                <div matLine>Hace 2 horas</div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>

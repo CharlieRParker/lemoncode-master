@@ -1,0 +1,165 @@
+.profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.profile-header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.profile-header p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.profile-header-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: white;
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="profile-pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="30" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23profile-pattern)"/></svg>');
+    z-index: 1;
+}
+
+.profile-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.avatar {
+    font-size: 6em;
+    height: 6em;
+    width: 6em;
+    color: white;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.profile-header-section h2 {
+    margin: 0 0 10px 0;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.profile-header-section p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.1em;
+}
+
+.profile-info {
+    padding: 40px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 4px solid #3498db;
+}
+
+.info-section h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.info-section h3 mat-icon {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.info-section p {
+    margin: 12px 0;
+    color: #5a6c7d;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+}
+
+.info-section p mat-icon {
+    margin-right: 10px;
+    color: #95a5a6;
+    font-size: 1.2em;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat mat-icon {
+    color: #3498db;
+    font-size: 2.5em;
+    height: 2.5em;
+    width: 2.5em;
+    margin-bottom: 15px;
+}
+
+.number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.label {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}

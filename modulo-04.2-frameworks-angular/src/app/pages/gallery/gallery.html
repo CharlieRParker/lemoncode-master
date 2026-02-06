@@ -1,1 +1,58 @@
-<p>gallery works!</p>
+<div class="gallery-container">
+    <div class="gallery-header">
+        <h1>Galería de Imágenes</h1>
+        <p>Explora nuestra colección de imágenes hermosas con efectos modernos.</p>
+        <div class="gallery-actions">
+            <button mat-raised-button color="primary">
+                <mat-icon>add_a_photo</mat-icon>
+                Subir Imagen
+            </button>
+            <button mat-stroked-button>
+                <mat-icon>filter_list</mat-icon>
+                Filtrar
+            </button>
+        </div>
+    </div>
+
+    <div class="image-grid">
+        @for (image of images; track image.src) {
+        <mat-card class="image-card">
+            <div class="image-container">
+                <img [src]="image.src" [alt]="image.alt" />
+                <div class="image-overlay">
+                    <button mat-icon-button class="overlay-button">
+                        <mat-icon>zoom_in</mat-icon>
+                    </button>
+                    <button mat-icon-button class="overlay-button">
+                        <mat-icon>favorite_border</mat-icon>
+                    </button>
+                    <button mat-icon-button class="overlay-button">
+                        <mat-icon>share</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <mat-card-content>
+                <div class="image-info">
+                    <h3>{{ image.title }}</h3>
+                    <p class="category">{{ image.category }}</p>
+                    <div class="image-tags">
+                        @for (tag of image.tags; track tag) {
+                        <span class="tag">{{ tag }}</span>
+                        }
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="primary">
+                    <mat-icon>visibility</mat-icon>
+                    Ver
+                </button>
+                <button mat-button>
+                    <mat-icon>download</mat-icon>
+                    Descargar
+                </button>
+            </mat-card-actions>
+        </mat-card>
+        }
+    </div>
+</div>

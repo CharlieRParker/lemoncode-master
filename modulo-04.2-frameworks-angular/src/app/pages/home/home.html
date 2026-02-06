@@ -1,1 +1,70 @@
-<p>home works!</p>
+<div class="hero">
+    <div class="hero-content">
+        <h1>Bienvenido a LemonCode App</h1>
+        <p>Una aplicación moderna construida con Angular para demostrar mejores prácticas de desarrollo.</p>
+        <div class="hero-buttons">
+            <button mat-raised-button color="primary" routerLink="/login">
+                <mat-icon>login</mat-icon>
+                Iniciar Sesión
+            </button>
+            <button mat-stroked-button routerLink="/about">
+                <mat-icon>info</mat-icon>
+                Saber Más
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="features">
+    <mat-card class="feature-card">
+        <mat-card-header>
+            <mat-icon class="feature-icon">security</mat-icon>
+            <mat-card-title>Autenticación Segura</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Login seguro con persistencia de sesión y protección de rutas.</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" routerLink="/login">Acceder</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="feature-card">
+        <mat-card-header>
+            <mat-icon class="feature-icon">dashboard</mat-icon>
+            <mat-card-title>Dashboard Interactivo</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Panel de control con métricas en tiempo real y visualizaciones.</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" routerLink="/dashboard">Ver Dashboard</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="feature-card">
+        <mat-card-header>
+            <mat-icon class="feature-icon">edit</mat-icon>
+            <mat-card-title>CRUD Completo</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Operaciones completas de crear, leer, actualizar y eliminar datos.</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" routerLink="/crud">Gestionar Datos</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="feature-card">
+        <mat-card-header>
+            <mat-icon class="feature-icon">photo_library</mat-icon>
+            <mat-card-title>Galería Moderna</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Visualización atractiva de contenido multimedia con efectos hover.</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" routerLink="/gallery">Explorar Galería</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
