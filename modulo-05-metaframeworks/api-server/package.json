@@ -1,0 +1,19 @@
+{
+  "name": "houses-api",
+  "version": "1.0.0",
+  "description": "Houses API",
+  "type": "module",
+  "scripts": {
+    "start": "tsx watch src/index.ts"
+  },
+  "author": "Carlos R. Baig Perez",
+  "license": "MIT",
+  "dependencies": {
+    "@hono/node-server": "^1.19.7",
+    "hono": "^4.11.0",
+    "nextjs-rental": "file:../nextjs-rental"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
