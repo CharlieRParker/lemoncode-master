@@ -1,12 +1,15 @@
 # Nuxt dev/build outputs
 .output
 .data
+.nuxt
 *.ldb
 dist
 
 # Node dependencies
 node_modules
 .npmrc
+package-lock.json
+pnpm-lock.yaml
 
 # Logs
 logs

@@ -11,13 +11,20 @@
 
       <!-- Loading State -->
       <div v-if="pending" class="text-center py-12">
-        <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+        <div
+          class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"
+        ></div>
         <p class="text-xl text-gray-600 mt-4">Cargando detalles...</p>
       </div>
 
       <!-- Error State -->
-      <div v-else-if="!house" class="bg-white rounded-lg shadow-lg p-8 text-center">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Casa no encontrada</h1>
+      <div
+        v-else-if="!house"
+        class="bg-white rounded-lg shadow-lg p-8 text-center"
+      >
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">
+          Casa no encontrada
+        </h1>
         <p class="text-lg text-gray-600 mb-8">
           Lo sentimos, no pudimos encontrar la casa que buscas.
         </p>
@@ -34,7 +41,7 @@
         <!-- Image -->
         <div class="relative w-full h-96 bg-gray-200">
           <NuxtImg
-            :src="house.image"
+            :src="`${config.public.apiUrl}${house.image}`"
             :alt="house.name"
             class="w-full h-full object-cover"
           />
@@ -44,7 +51,9 @@
         <div class="p-8">
           <!-- Header -->
           <div class="mb-8">
-            <h1 class="text-4xl font-bold text-gray-900 mb-2">{{ house.name }}</h1>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">
+              {{ house.name }}
+            </h1>
             <div class="flex items-center gap-2 text-lg text-gray-600">
               <span>📍</span>
               <span>{{ house.location }}</span>
@@ -57,21 +66,29 @@
           </p>
 
           <!-- Features Grid -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 pb-8 border-b-2">
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 pb-8 border-b-2"
+          >
             <div class="text-center">
               <div class="text-3xl mb-2">🛏️</div>
               <p class="text-gray-600 text-sm">Habitaciones</p>
-              <p class="text-2xl font-bold text-gray-900">{{ house.bedrooms }}</p>
+              <p class="text-2xl font-bold text-gray-900">
+                {{ house.bedrooms }}
+              </p>
             </div>
             <div class="text-center">
               <div class="text-3xl mb-2">🚿</div>
               <p class="text-gray-600 text-sm">Baños</p>
-              <p class="text-2xl font-bold text-gray-900">{{ house.bathrooms }}</p>
+              <p class="text-2xl font-bold text-gray-900">
+                {{ house.bathrooms }}
+              </p>
             </div>
             <div class="text-center">
               <div class="text-3xl mb-2">💰</div>
               <p class="text-gray-600 text-sm">Precio por noche</p>
-              <p class="text-2xl font-bold text-blue-600">${{ house.pricePerNight }}</p>
+              <p class="text-2xl font-bold text-blue-600">
+                ${{ house.pricePerNight }}
+              </p>
             </div>
             <div class="text-center">
               <div class="text-3xl mb-2">📅</div>
@@ -100,36 +117,45 @@
 </template>
 
 <script setup lang="ts">
-import type { House } from '~/types/house';
+import type { House } from '~/types/house'
 
 definePageMeta({
   layout: 'default',
-});
+})
 
-const route = useRoute();
-const { getHouseById } = useHouses();
+const config = useRuntimeConfig()
+const route = useRoute()
+const { getHouseById } = useHouses()
 
 // Get house ID from route params
-const houseId = route.params.id as string;
+const houseId = route.params.id as string
 
 // Fetch house data
-const { data: house, pending, error } = await useFetch(async () => {
-  if (!houseId) return null;
-  return getHouseById(houseId);
-});
+const {
+  data: house,
+  pending,
+  error,
+} = await useAsyncData<House | null>(`house-${houseId}`, () => {
+  if (!houseId) return null
+  return getHouseById(houseId)
+})
 
 // Set head metadata
 useHead({
-  title: computed(() => `${house.value?.name || 'Casa Rural'} - Alquiler Vacacional`),
+  title: computed(
+    () => `${house.value?.name || 'Casa Rural'} - Alquiler Vacacional`
+  ),
   meta: [
     {
       name: 'description',
-      content: computed(() => house.value?.description || 'Detalle de una casa rural'),
+      content: computed(
+        () => house.value?.description || 'Detalle de una casa rural'
+      ),
     },
   ],
-});
+})
 
 if (error.value) {
-  console.error('Error loading house:', error.value);
+  console.error('Error loading house:', error.value)
 }
 </script>

@@ -8,8 +8,15 @@ export default defineNuxtConfig({
   css: ['~/assets/styles/main.css'],
   runtimeConfig: {
     public: {
-      // Configuración para el módulo de imagen
+      apiUrl: process.env.NUXT_PUBLIC_API_URL || 'http://localhost:3001'
     }
+  },
+  imports: {
+    autoImport: true
+  },
+  devServer: {
+    port: 3000,
+    host: 'localhost'
   },
 
   compatibilityDate: '2024-04-03',

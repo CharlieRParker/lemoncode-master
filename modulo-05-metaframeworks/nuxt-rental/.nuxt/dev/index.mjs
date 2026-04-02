@@ -649,7 +649,9 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {},
+  "public": {
+    "apiUrl": "http://localhost:3001"
+  },
   "ipx": {
     "baseURL": "/_ipx",
     "alias": {},

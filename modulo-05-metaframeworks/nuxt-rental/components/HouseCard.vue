@@ -5,7 +5,7 @@
     >
       <div class="relative w-full h-48 bg-gray-200">
         <NuxtImg
-          :src="house.image"
+          :src="`${config.public.apiUrl}${house.image}`"
           :alt="house.name"
           class="w-full h-full object-cover"
           loading="lazy"
@@ -26,7 +26,9 @@
           </div>
         </div>
         <div class="flex justify-between items-center">
-          <span class="text-2xl font-bold text-blue-600">${{ house.pricePerNight }}</span>
+          <span class="text-2xl font-bold text-blue-600"
+            >${{ house.pricePerNight }}</span
+          >
           <span class="text-xs text-gray-500">/noche</span>
         </div>
       </div>
@@ -35,9 +37,10 @@
 </template>
 
 <script setup lang="ts">
-import type { House } from '~/types/house';
+import type { House } from '~/types/house'
+const config = useRuntimeConfig()
 
 defineProps<{
-  house: House;
-}>();
+  house: House
+}>()
 </script>

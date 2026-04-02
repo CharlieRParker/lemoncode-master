@@ -1,8 +1,9 @@
 import type { House } from '~/types/house';
 
-const API_BASE_URL = 'http://localhost:3001'; // Reemplazar con el mock API
-
 export const useHouses = () => {
+    const config = useRuntimeConfig();
+    const API_BASE_URL = config.public.apiUrl;
+
     const getHouses = async (): Promise<House[]> => {
         try {
             const houses = await $fetch<House[]>(`${API_BASE_URL}/api/houses`);
